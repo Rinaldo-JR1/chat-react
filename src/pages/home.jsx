@@ -1,9 +1,16 @@
 import React from 'react';
-
+import { Chat } from '../components/chat'
+import { Sidebar } from '../components/sidebar';
 const Home = () => {
-    <div className='home'>
+    return (
+        <div className='home'>
+            <div className='container'>
+                <Sidebar />
+                <Chat />
 
-    </div>
+            </div>
+        </div>
+    )
 }
 
 export default Home
