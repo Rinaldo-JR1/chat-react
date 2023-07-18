@@ -3,7 +3,7 @@ import Add from '../imgs/addAvatar.png'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { doc, setDoc } from "firebase/firestore";
 import { auth, storage, db } from "../firebase";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
@@ -81,7 +81,7 @@ const Register = () => {
                     <button>Cadastrar</button>
                 </form>
                 {err && <span>Algo deu errado</span>}
-                <p>Já tem uma conta? Clique aqui</p>
+                <p>Já tem uma conta? Não tem uma conta?<Link to='/login'>Clique aqui</Link></p>
             </div>
         </div>
     )

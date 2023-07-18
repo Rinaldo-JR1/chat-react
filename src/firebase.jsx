@@ -8,16 +8,15 @@ import { getStorage } from "firebase/storage";
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_APIKEY,
     authDomain: import.meta.env.VITE_AUTHDOMAIN,
-    projectId: import.meta.env.VITE_PROJECTID,
+    projectId: `${import.meta.env.VITE_PROJECTID}`,
     storageBucket: import.meta.env.VITE_STORAGEBUCKET,
     messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
     appId: import.meta.env.VITE_APPID,
     measurementId: import.meta.env.VITE_MEASUREMENTID
 };
-
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
-export const storage = getStorage();
-export const db = getFirestore();
+export const app = await initializeApp(firebaseConfig);
+export const auth = await getAuth();
+export const storage = await getStorage();
+export const db = await getFirestore();
 
